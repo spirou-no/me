@@ -1,0 +1,144 @@
+=== What to add* ===
+
+* Statistics
+  * Gather statistics (mean, standard deviation, skew, kurtosis)
+  * Cross correlation, in particular large dataset
+  * Histogram
+  * PDF/CDF functions
+    * median
+    * mean, std dev, higher order moments
+   
+   
+* Geometry
+  * Point
+  * Vector
+  * Line, Ray, Line segment
+  * Point set
+  * Polygon
+  * Rectangle
+  * Cirlce
+  * Ellipsis
+  * Triange
+  * Parallellogram
+  * Trapez
+  * Quadrilateral
+  * Quadrilateral transform
+  * Dot-product, cross-product, projections
+  * Plane  Infinite, finite, semi-infinite
+  * Rotated rectangle in 2d/3d.  Line/plane with uncertainty
+  * 2d/3d coordinate transforms
+    * rotation
+    * translation
+    * scale
+    * skew
+    * perspective
+  * Polygon renderer
+  * Line segment intersection (Preparata 7.2.3)
+  * Geometry of rectangles (Preparata 8)
+    * Deadlock detection/prevention
+
+  
+* Array types
+  * Storage management types
+    * Dense grids, i.e. grid index to buffer index mapping in traits
+ 	  * Linear layout
+	  * Templated fixed strides
+	  * Bricked layout, (tilesize any, power of 2, templated)
+	  * Hierarchical brick layout
+	* Dynamically allocated
+	* Scatter grid (hashtable)
+	* Cached grid
+	* Null grid
+        * Bit grid, really a view on an int grid
+          * Bit count pr word is power of 2
+          * Bit count arbitrary (more expensive div and mod)
+          * Use any base (e.g. base 5 for values 0..4). i.e. stored_value = x0*5^0 + x1*5^1 ...
+            This will be very slow...
+	* Transactional grid for tracking changes
+	* Recycle grid.  keep pool of recent tiles, recency parametrized.
+  * Views
+    * Value transform (unit, value type, unit circle, ...)
+    * Slices, same dimensionality or lower
+    * Range checking
+    * Decimated
+    * Sub-area view (== decimated)
+    * Super-area read-only view.  Outside area is novalue (padding)
+    * Track changes (as bounding box)
+    * Cached view
+    * Transform from multiple inputs, f(x1,x2, ..., xN)
+  * Functionality
+    * Expression templates for full expressions, i.e. C = A + B*3 + pow(2, C);
+    * clear
+    * copy_slice
+    * optimized for low dimensionality, i.e. unrolling loops
+    * general n-dimensional indexing for generic programming (should be view?)
+    * special indexing for low-dimension (<=4) data, i.e. (i,j,k) for 3d.
+    * slices for extents/from..to ranges
+    * generic slices, map index
+  * Iterators
+    * Tiled iteration
+    * Master/slave iterator
+
+  
+* Cache management
+  * Policy
+    * LRU
+    * Random
+    * 1-way associative
+    * N-way set-associate & LRU
+    * ARC, an adaptive cache algorithm (mix LRU/LFU).  Estimate when random is better?  
+
+
+* Signal processing
+  * Optimize FIR filter.  Load input data to registers as little as possible.
+  * Optimize IIR filter
+  
+  
+* Mathematics
+  * Simple transforms
+    * Traits
+    * Inverse
+    * Monotonic
+  * Intergration
+    * Romberg, richardson
+    * Argument transform
+    * Runge-Kutta
+  * Zero-solver
+    * Bi-section method
+    * Secant method
+    * Regula-falsi
+    * Modified regula-falsi
+    * Newton-Raphson
+    * Laguerres iteration method (for polynomials)
+    * Aitken extrapolation
+  * Optimization
+    * Simulated annealing
+    * Linear programming, the simplex method
+  * Richardson extrapolation
+ 
+ 
+* Generic Algorithms
+  * Computation tree to reduce computational complexity.  
+    Generalized merge for
+    * constant cost input
+    * variable cost input and current result
+    * ordered vs unordered input
+    * apriori cost knowledge
+  * 2-level computation (reduce computational complexity) [CANCELLED]
+  * Seeded versions of binary_search
+	* binary_search
+	* lower_bound
+	* upper_bound
+	* equal_range
+  
+* Misc algorithms
+  * Space-filling curves (Hilbert, Sierpinski)
+  * Backtracking (depth first search)
+  * Flood fill.  Surface in 3d space, region in 2d space
+  * Min-cost path in 2d/3d
+  * The stable marriage problem
+  
+  
+* Other
+  * Color space transforms
+  * random generator with known period
