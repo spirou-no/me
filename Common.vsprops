@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="Common"
+	OutputDirectory="$(SolutionDir)\$(ConfigurationName)"
+	IntermediateDirectory="$(SolutionDir)\$(ConfigurationName)\Obj"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		Optimization="0"
+		AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;e:\PeMain\Libraries\Abingdon\3rdParty\include"
+		WarningLevel="4"
+		DebugInformationFormat="4"
+	/>
+</VisualStudioPropertySheet>

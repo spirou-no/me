@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="CommonCpp"
+	OutputDirectory="$(RootDir)out\$(PlatformName)\$(ConfigurationName)"
+	IntermediateDirectory="$(RootDir)out\obj\$(PlatformName)\$(ConfigurationName)\$(ProjectName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories="&quot;$(SolutionDir)&quot;;$(LibRootDir)"
+		PreprocessorDefinitions="_SECURE_SCL=0;_CRT_SECURE_NO_DEPRECATE"
+		FloatingPointModel="2"
+		DisableLanguageExtensions="false"
+		ProgramDataBaseFileName="$(IntDir)\$(ProjectName).pdb"
+		WarningLevel="4"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		OutputFile=""
+		AdditionalLibraryDirectories="&quot;$(OutDir)&quot;"
+	/>
+	<UserMacro
+		Name="RootDir"
+		Value="$(SolutionDir)..\"
+	/>
+	<UserMacro
+		Name="SourceDir"
+		Value="$(RootDir)src\"
+	/>
+</VisualStudioPropertySheet>
