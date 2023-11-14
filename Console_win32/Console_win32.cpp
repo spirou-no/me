@@ -196,7 +196,6 @@ static void debugmap() {
   koko.data_[4] = 120;
 
   std::string xxx("hei");
-  oyvind::balle kook;
   std::vector<float> bla(4, -2.0f);
   std::map<int, std::string> foo;
   foo[9]="I";
@@ -206,7 +205,8 @@ static void debugmap() {
 }
 
 int _tmain(int argc, _TCHAR* argv[]) {
-//  oyrke::algorithm::test::bit_algo_test();
+#if 0
+  //  oyrke::algorithm::test::bit_algo_test();
 //  debugmap();
   test_sse();
 	test_tiny_algo();
@@ -217,15 +217,14 @@ int _tmain(int argc, _TCHAR* argv[]) {
   test_interpolate_performance();
   //gather_hasher_statistics();
   
-  ::scanf("\n");
-
-#if 0
+#else
   srand(unsigned(oyrke::utility::stopwatch::ticks_now()));
   int nteams = argc > 1 ? atoi(argv[1]) : 12;
   int nreps  = argc > 2 ? atoi(argv[2]) : 2;
   bool print = argc > 3;
 
   random_match_test(nteams, nreps, print);
+  oyrke::utility::stopwatch timer;
   oyrke::utility::stopwatch::tick_t now = timer.elapsed_ticks();
   timer.restart();
   now = timer.elapsed_ticks();

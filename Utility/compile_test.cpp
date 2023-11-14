@@ -81,11 +81,11 @@ test_compile() {
 
   std::pair<vector_it, list_it> match = first_set_intersection(v.begin(), v.end(), l.begin(), l.end());
   std::pair<vector_itud, list_it> match2 = first_set_intersection(vud.begin(), vud.end(), l.begin(), l.end());
-  for_each_if(v.begin(), v.end(), std::negate<int>(), [](auto x) { return std::less<int>()(x, 2); });
+  for_each_if(v.begin(), v.end(), [](auto) {}, [](auto x) { return std::less<int>()(x, 2); });
   std::copy_if(v.begin(), v.end(), l.begin(), [](auto x) { return x < 2; } );
   auto less2 = [](auto x) { return x < 2; };
     copy_backward_if(v.begin(), v.end(), l.end(), less2); 
-    while_do(v.begin(), v.end(), std::negate<int>(), less2); 
+    while_do(v.begin(), v.end(), [](auto) {}, less2);
     transform_if(v.begin(), v.end(), l.begin(), std::negate<int>(), less2); 
     transform_if(v.begin(), v.end(), l.begin(), l.begin(), std::plus<int>(), std::less<int>()); 
     
@@ -149,6 +149,7 @@ test_compile_stress() {
     in_it_t    in2   = in_it_t(v.end());
     out_it_t   out   = out_it_t(v);
     std::negate<int> unop;
+    auto noop = [](auto) {};
     auto unpred = [](auto x) { return x < 2; };
     
     std::pair<vector_it, list_it> match = first_set_intersection(v.begin(), v.end(), l.begin(), l.end());
@@ -158,10 +159,10 @@ test_compile_stress() {
     
     first_set_intersection(in1, in2, fwd1, fwd2);
     
-    for_each_if(in1, in2, unop, unpred); 
+    for_each_if(in1, in2, noop, unpred); 
     std::copy_if(in1, in2, out, unpred);
     copy_backward_if(bi1, bi2, bi1, unpred);
-    while_do(in1, in2, unop, unpred);
+    while_do(in1, in2, noop, unpred);
     transform_if(in1, in2, out, unop, unpred);
     transform_if(in1, in2, in1, out, std::plus<int>(), std::less<int>()); 
     
