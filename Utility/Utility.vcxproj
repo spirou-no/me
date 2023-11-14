@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E17F32A2-8872-4044-92F7-52BA9D3E09EE}</ProjectGuid>
+    <RootNamespace>Utility</RootNamespace>
+    <Keyword>ManagedCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(SolutionDir)\VsProps\ReleaseWin32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\VsProps\ReleaseX64.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(SolutionDir)\VsProps\DebugWin32.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\VsProps\DebugX64.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+    <ClCompile>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Lib>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="acosh.cpp" />
+    <ClCompile Include="bdtr.cpp" />
+    <ClCompile Include="bit_algo.cpp" />
+    <ClCompile Include="chdtr.cpp" />
+    <ClCompile Include="coordinate_conv.cpp" />
+    <ClCompile Include="dawsn.cpp" />
+    <ClCompile Include="ellie.cpp" />
+    <ClCompile Include="ellik.cpp" />
+    <ClCompile Include="ellpe.cpp" />
+    <ClCompile Include="ellpj.cpp" />
+    <ClCompile Include="ellpk.cpp" />
+    <ClCompile Include="erf.cpp" />
+    <ClCompile Include="expn.cpp" />
+    <ClCompile Include="extent.cpp" />
+    <ClCompile Include="fac.cpp" />
+    <ClCompile Include="fdtr.cpp" />
+    <ClCompile Include="fresnl.cpp" />
+    <ClCompile Include="gdtr.cpp" />
+    <ClCompile Include="igam.cpp" />
+    <ClCompile Include="igami.cpp" />
+    <ClCompile Include="j0_y0.cpp" />
+    <ClCompile Include="j1_y1.cpp" />
+    <ClCompile Include="k0.cpp" />
+    <ClCompile Include="k1.cpp" />
+    <ClCompile Include="math\asin.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="math\asinh.cpp" />
+    <ClCompile Include="math\atan.cpp" />
+    <ClCompile Include="math\atanh.cpp" />
+    <ClCompile Include="math\roots.cpp" />
+    <ClCompile Include="math\cosh.cpp" />
+    <ClCompile Include="math\exp.cpp" />
+    <ClCompile Include="math\gamma.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="math\i0.cpp" />
+    <ClCompile Include="math\i1.cpp" />
+    <ClCompile Include="math\ieee754.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="math\log.cpp" />
+    <ClCompile Include="math\matrix.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AssemblyCode</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="math\pow.cpp" />
+    <ClCompile Include="math\sincos.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="math\sinh.cpp" />
+    <ClCompile Include="math\tan.cpp" />
+    <ClCompile Include="math\tanh.cpp" />
+    <ClCompile Include="nbdtr.cpp" />
+    <ClCompile Include="ndtr.cpp" />
+    <ClCompile Include="ndtri.cpp" />
+    <ClCompile Include="pdtr.cpp" />
+    <ClCompile Include="performance_testing.cpp" />
+    <ClCompile Include="raii.cpp" />
+    <ClCompile Include="rgamma.cpp" />
+    <ClCompile Include="sici.cpp" />
+    <ClCompile Include="sort.cpp" />
+    <ClCompile Include="sprintf.cpp" />
+    <ClCompile Include="stopwatch.cpp" />
+    <ClCompile Include="bit_algo_test.cpp" />
+    <ClCompile Include="compile_test.cpp" />
+    <ClCompile Include="sse_test.cpp">
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Release|x64'">All</AssemblerOutput>
+      <AssemblerOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">All</AssemblerOutput>
+    </ClCompile>
+    <ClCompile Include="tiny_algo_test.cpp" />
+    <ClCompile Include="yv.cpp" />
+    <ClCompile Include="zeta.cpp" />
+    <ClCompile Include="zetac.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="accumulator.h" />
+    <ClInclude Include="algobase.h" />
+    <ClInclude Include="algorithm.h" />
+    <ClInclude Include="bit_algo.h" />
+    <ClInclude Include="const_array.h" />
+    <ClInclude Include="double2v.h" />
+    <ClInclude Include="extent.h" />
+    <ClInclude Include="float4v.h" />
+    <ClInclude Include="float8v.h" />
+    <ClCompile Include="ieee754_float_convert.cpp">
+      <FileType>CppHeader</FileType>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </DisableSpecificWarnings>
+    </ClCompile>
+    <ClInclude Include="int4v.h" />
+    <ClInclude Include="iterator.h" />
+    <ClInclude Include="sse_template.h" />
+    <ClInclude Include="mask2v.h" />
+    <ClInclude Include="mask4v.h" />
+    <ClInclude Include="math\constants.h" />
+    <ClInclude Include="performance_testing.h" />
+    <ClInclude Include="sprintf.h" />
+    <ClInclude Include="sse.h" />
+    <ClInclude Include="math.h" />
+    <ClInclude Include="sse_internal.h" />
+    <ClInclude Include="stopwatch.h" />
+    <ClInclude Include="tiny_algo.h" />
+    <ClInclude Include="tiny_algo_orig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
