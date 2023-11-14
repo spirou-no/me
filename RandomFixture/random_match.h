@@ -77,14 +77,14 @@ namespace oyrke { namespace algorithm { namespace fixture {
     */
     class random_fixture {
     public:
-        random_fixture(size_t number_of_teams);
+        explicit random_fixture(size_t number_of_teams, size_t number_of_reps=1);
 
         //! Set number of times the teams meet.  
         void set_team_count(size_t n_teams);
         void set_repetitions(size_t repetitions);
         void make_full_fixture(/* progress_reporter */);
-        void draw_next_match();
-        void prepare_draw();
+        void draw_next_match();  // TODO make this private, and use a generator/iterator instead to draw matches one by one
+        void prepare_draw();     // TODO make private when draw_next_match is turned into iterator
 
         void get_fixture(/* fixture */);
 

@@ -1,7 +1,5 @@
 #include <RandomFixture/random_match.h>
 #include <utility/stopwatch.h>
-#include <boost/lambda/bind.hpp>
-#include <boost/iterator/transform_iterator.hpp>
 #include <numeric>
 
 namespace {

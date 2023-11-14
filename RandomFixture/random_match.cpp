@@ -481,8 +481,8 @@ namespace oyrke { namespace algorithm { namespace fixture {
     }
 
 
-    random_fixture::random_fixture(size_t number_of_teams) 
-    : num_teams_(number_of_teams), num_repetitions_(1), current_match_count_(0), retry_count_(0) {
+    random_fixture::random_fixture(size_t number_of_teams, size_t number_of_reps) 
+    : num_teams_(number_of_teams), num_repetitions_(number_of_reps), current_match_count_(0), retry_count_(0) {
     }
 
     void
@@ -569,8 +569,7 @@ namespace oyrke { namespace algorithm { namespace fixture {
     random_fixture::make_full_fixture(/* progress_reporter */) {
         prepare_draw();
 
-        size_t num_matches = number_of_matches();
-        while (current_match_count_ < num_matches) {
+        while (!is_complete()) {
             draw_next_match();
         }
     }
@@ -754,7 +753,7 @@ namespace oyrke { namespace algorithm { namespace fixture {
         }
         if (draw == 0) {
             retry_count_ -= retry_count_ != 0 ? 1 : 0;
-            draw = &(*random_1_if(days_.begin(), days_.end(), std::mem_fun_ref(&detail::day::has_open_matches)));
+            draw = &(*random_1_if(days_.begin(), days_.end(), [](const detail::day& d) { return d.has_open_matches(); }));
         }
         return draw;
     }

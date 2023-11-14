@@ -151,7 +151,7 @@ while_do(
     FwdIter		first, 
     FwdIter		last, 
     UnaryOp		func, 
-    Pred		pred
+    Pred		  pred
 ) {
     while (first != last && pred(*first)) {
         func(*first);
@@ -872,19 +872,19 @@ namespace detail {
     class system_rng {
     public:
         system_rng() : base_rng_() {} //, rng_(base_rng_) {}
-        IntType operator()(IntType x) { 
-	        const int RANDOM_BITS = 12;	// minimum random bits from rand() is 15, use 12 to be conservative
-	        const int RANDOM_MAX = (1U << RANDOM_BITS) - 1;
+        IntType operator()(IntType x) {
+          const int RANDOM_BITS = 12;	// minimum random bits from rand() is 15, use 12 to be conservative
+          const int RANDOM_MAX = (1U << RANDOM_BITS) - 1;
 
-    		IntType Rm = RANDOM_MAX;
-	    	IntType Rn = ::rand() & RANDOM_MAX;
-		    while (Rm < x && Rm != ~0UL) {
-			    Rm = Rm << RANDOM_BITS | RANDOM_MAX;
-			    Rn = Rn << RANDOM_BITS | (::rand() & RANDOM_MAX);	// build random value
-            }
-            
-            return Rn;
-            //return rng_(x);
+          IntType Rm = RANDOM_MAX;
+          IntType Rn = ::rand() & RANDOM_MAX;
+          while (Rm < x && Rm != ~0UL) {
+            Rm = Rm << RANDOM_BITS | RANDOM_MAX;
+            Rn = Rn << RANDOM_BITS | (::rand() & RANDOM_MAX);	// build random value
+          }
+
+          return Rn % x;
+          //return rng_(x);
         }
     
     private:
